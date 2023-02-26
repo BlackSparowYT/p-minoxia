@@ -1,0 +1,593 @@
+/** General CSS **/
+
+@font-face {
+    font-family: 'Ethnocentric';
+    src: url('./files/font/ethnocentric\ rg.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --white: #FFF;
+    --white-trans1: #ffffff2f;
+    --white-trans2: #ffffff64;
+
+    --gray-light: #b2b2b2;
+    --gray: #2f2f2f;
+    --gray-dark: #212121;
+
+    --black: #000;
+
+    --blue: #0000ff;
+    --blue-dark: #0000b0;
+
+    --red-light: #871C08;
+    --red: #811C0A;
+    --red-dark: #7B1B0B;
+
+    --green: #00ff00;
+    --green-dark: #00a700;
+
+    --purple: #210F20;
+    --purple-dark: #1B0D1A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    color: var(--white);
+    font-family: 'Sono', sans-serif;
+    font-weight: 600;
+}
+
+p, a {
+    color: var(--white);
+    font-family: 'Sono', sans-serif;
+    font-weight: 300;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+
+body {
+    background-color: var(--black);
+}
+
+
+
+
+
+/** Scrollbar **/
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white-trans1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--white-trans1);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--white-trans2);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+/** Navbar **/
+
+:root {
+    /* Set the Navbar height here! */
+    --nav-height: 80px;
+    --nav-height-half: calc(var(--nav-height) / 2)
+}
+
+nav #navbar-desktop {
+    height: var(--nav-height);
+    background-color: var(--gray-dark);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-desktop-items {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#navbar-desktop a {
+    display: block;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: var(--white);
+}
+
+#navbar-desktop .navbar-desktop-items a:hover {
+    transition: all 0.2s ease-in-out;
+}
+
+#navbar-desktop h3 {
+    padding: calc(var(--nav-height-half) - 23px/2);
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#navbar-desktop .navbar-desktop-items .hoverbtn:hover h3 {
+    background-color: var(--purple);
+    padding: calc(var(--nav-height-half) - 23px/2 - 10px);
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
+    color: var(--black);
+    border-radius: 10px;
+    display: block;
+}
+
+.navbar-desktop-sitelogo {
+    float: left;
+}
+.navbar-desktop-sitelogo img {
+    background-color: var(--gray-dark);
+    height: 80px;
+    margin: 10px 0 10px 10px;
+}
+
+.navbar-desktop-items .active h3 {
+    background-color: var(--purple-dark);
+    color: var(--black);
+    border-radius: 10px;
+    padding: calc(var(--nav-height-half) - 23px/2 - 10px) !important;
+    margin: 10px !important;
+}
+
+.navbar-desktop-items .nav-icon-h3 {
+    padding: calc(var(--nav-height-half) - 40px/2) !important;
+    height: 40px;
+}
+
+.navbar-desktop-items .nav-icon-h3 .nav-icon {
+    height: 40px;
+}
+
+
+
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.dropbtn h3 {
+    pointer-events: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 100;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #212121d8;
+    border-radius: 10px;
+    margin-top: 2px;
+    width: 193px;
+    overflow: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+#navbar-desktop .navbar-desktop-items .hoverbtn:hover + .dropdown-content {
+    margin-top: -18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-content a {
+    padding: 10px; 
+    transition: all 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff0000b2;
+    color: #000 !important;
+    transition: all 0.3s;
+}
+
+.show {
+    display: block;
+}
+
+
+
+
+
+
+
+/* Screen size logic */
+
+#navbar-mobile {
+    display: none;
+} 
+
+@media only screen and (max-width: 1184px) {
+    #navbar-desktop {
+        display: none !important;
+    }    
+
+    #navbar-mobile {
+        display: block !important;
+    }    
+}
+
+   
+
+
+
+/* Mobile Version */
+
+nav #navbar-mobile {
+    height: 60px;
+    background-color: #170132;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-mobile-items {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#navbar-mobile a {
+    display: block;
+    height: 100%;
+    width: 180px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: #FFF;
+}
+
+#navbar-mobile .navbar-mobile-items a:hover {
+    transition: all 0.2s ease-in-out;
+}
+
+#navbar-mobile .navbar-mobile-items h3 {
+    padding: calc(30px - 26.4px/2 - 5px);
+    margin: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+#navbar-mobile .navbar-mobile-items a:hover h3 {
+    background-color: #7D419D;
+    padding: calc(30px - 26.4px/2 - 5px);
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+#navbar-mobile .navbar-mobile-items a > .openbtn {
+    font-size: 30px;
+    padding: calc(37.5px - 63.6px/2 - 5px);
+} 
+
+.nav-overlay .nav-overlay-content a .active {
+    color: #7D419D !important;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+
+
+#navbar-mobile .navbar-mobile-items a > .openbtn {
+    font-size: 30px;
+    padding: calc(37.5px - 63.6px/2 - 5px);
+}
+
+#navbar-mobile .navbar-mobile-items a:hover > .openbtn {
+    font-size: 30px;
+    padding: calc(37.5px - 63.6px/2 - 5px);
+}
+
+.navbar-mobile-sitename {
+    float: left;
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+}
+
+.navbar-mobile-sitename h2 {
+    padding: calc(30px - 28.8px/2 - 5px) 0;
+    margin: 10px 0;
+}
+
+
+
+.nav-overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #170132;
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+  
+.nav-overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+  
+.nav-overlay .nav-overlay-content a {
+    padding: 5px 0;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    height: auto !important;
+    width: 100% !important;
+}
+
+.nav-overlay .closebtn {
+    padding-right: 10px;
+    text-align: right;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-size: 60px;
+    height: 60px !important;
+}
+
+
+.nav-overlay-content .active h3 {
+    color: #ff0000b2;
+}
+
+
+/** Background **/
+
+.image-background {
+    background-image: url(./files/images/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+    opacity: 75%;
+}
+
+
+
+
+
+
+
+/** Home **/
+
+.home-page {
+    background-image: url(files/images/background.png);
+    background-position: center;
+    background-size: cover;
+}
+
+/** Home | Hero **/
+.home-page .hero {
+    position: normal;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    height: 100vh;
+    width: auto;
+    z-index: 50;
+    opacity: 100%;
+}
+
+.home-page .hero .block-1 {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.home-page .hero .block-2 {
+    width: 100%;
+    /*height: 3vh;*/
+    height: 50vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.home-page .hero h1 {
+    margin: 0px;
+    padding: 0px;
+    color: #FFF;
+    transition: all .2s ease-in;
+    z-index: 50;
+    pointer-events: none;
+}
+
+
+
+
+/** Team **/
+
+/** Team | Hero **/
+.team-page .hero {
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    height: 90vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.team-page .hero h1 {
+    margin: 0px;
+    padding: 0px;
+    color: #FFF;
+    transition: all .2s ease-in;
+    z-index: 50;
+    pointer-events: none;
+    font-size: 20px;
+}
+
+
+
+/** Content Block | Team **/
+
+.team-page .flex-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-page .block {
+    min-width: 300px;
+    width: 20%;
+    height: 50%;
+    min-height: 400px;
+    background-color: #7D419D;
+    text-align: center;
+    margin: 50px 30px;
+    border-radius: 10px;
+    transition: all 0.3s ;
+    box-shadow: 10px 10px 10px #2f2f2f;
+}
+
+.team-page .block:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
+
+
+.team-page .block img {
+    width: 90%;
+    margin: 30px 0;
+    border: #6804c1 3px solid;
+    border-radius: 1000px;
+}
+
+.team-page .text-box {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.team-page .text-box h3 {
+    font-size: 16px;
+    margin-top: 30px;
+}
+.team-page .text-box p {
+    font-size: 13px;
+    margin: 10px;
+}
+
+
+
+
+
+/** Robot **/
+
+/** Robot | Hero **/
+.robot-page .hero {
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    height: 90vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.robot-page .hero h1 {
+    margin: 0px;
+    padding: 0px;
+    color: #FFF;
+    transition: all .2s ease-in;
+    z-index: 50;
+    pointer-events: none;
+    font-size: 20px;
+}
+
+
+
+/** Content Block | Team **/
+
+.robot-page .flex-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.robot-page .block {
+    min-width: 300px;
+    width: 20%;
+    height: 50%;
+    min-height: 400px;
+    background-color: #7D419D;
+    text-align: center;
+    margin: 50px 30px;
+    border-radius: 10px;
+    transition: all 0.3s ;
+    box-shadow: 10px 10px 10px #2f2f2f;
+}
+
+.robot-page .block:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
+
+
+.robot-page .block img {
+    width: 90%;
+    margin: 30px 0;
+    border: #6804c1 3px solid;
+    border-radius: 30px;
+}
+
+.robot-page .block p {
+    margin: 10px 10px;
+}
