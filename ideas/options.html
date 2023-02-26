@@ -1,0 +1,75 @@
+<select id="first-choice"  style="display:block;">
+    <option selected disabled>Choose an option</option>
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+</select>
+
+<div id="second-choice" style="display:none;">
+    <select>
+        <option selected disabled>Choose second an option</option>
+        <option value="option4">Option 4</option>
+        <option value="option5">Option 5</option>
+        <option value="option6">Option 6</option>
+    </select>
+</div>
+<a href="options.html">Restart</a>
+<div id="result" style="display:none;"></div>
+
+
+<script>
+    var firstChoice = document.getElementById('first-choice');
+    var secondChoice = document.getElementById('second-choice');
+    var result = document.getElementById('result');
+
+    firstChoice.addEventListener('change', function () {
+        if (this.value == 'option1') {
+            firstChoice.style.pointerEvents = 'none';
+            secondChoice.style.display = 'block';
+            secondChoice.children[0].addEventListener('change', function () {
+                if (this.value == 'option4') {
+                    secondChoice.style.pointerEvents = 'none';
+                    result.innerHTML = '<p>Result 1</p><img src="../files/images/photo-black.png" />';
+                    result.style.display = 'block';
+                } else if (this.value == 'option5') {
+                    result.innerHTML = 'Result 2';
+                    result.style.display = 'block';
+                } else if (this.value == 'option6') {
+                    result.innerHTML = 'Result 3';
+                    result.style.display = 'block';
+                }
+            });
+        } else if (this.value == 'option2') {
+            secondChoice.style.display = 'block';
+            secondChoice.children[0].addEventListener('change', function () {
+                if (this.value == 'option4') {
+                    result.innerHTML = 'Result 4';
+                    result.style.display = 'block';
+                } else if (this.value == 'option5') {
+                    result.innerHTML = 'Result 5';
+                    result.style.display = 'block';
+                } else if (this.value == 'option6') {
+                    result.innerHTML = 'Result 6';
+                    result.style.display = 'block';
+                }
+            });
+        } else if (this.value == 'option3') {
+            secondChoice.style.display = 'block';
+            secondChoice.children[0].addEventListener('change', function () {
+                if (this.value == 'option4') {
+                    result.innerHTML = 'Result 7';
+                    result.style.display = 'block';
+                } else if (this.value == 'option5') {
+                    result.innerHTML = 'Result 8';
+                    result.style.display = 'block';
+                } else if (this.value == 'option6') {
+                    result.innerHTML = 'Result 9';
+                    result.style.display = 'block';
+                }
+            });
+        } else {
+            secondChoice.style.display = 'none';
+            result.style.display = 'none';
+        }
+    });
+</script>

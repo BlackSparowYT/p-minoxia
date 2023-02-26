@@ -15,15 +15,45 @@
     <header>
         <nav>
             <div id="navbar-desktop">
-                <div class="navbar-desktop-sitename">
-                    <h2>ROBOTICA</h2>
+                <div class="navbar-desktop-sitelogo navbar-desktop-sitename">
+                    <h2>Minoxia</h2>
                 </div>
                 <div class="navbar-desktop-items">
-                    <a href="../index.html"><h3>Home</h3></a>
-                    <a href="../robot/index.html"><h3>De Robot</h3></a>
-                    <a href="../team/index.html"><h3 class="active">Het Team</h3></a>
+                    <a href="../index.html" class="hoverbtn"><h3>Home</h3></a>
+                    
+                    <div class="dropdown">
+                        <a onclick="myFunction3()" class="dropbtn hoverbtn"><h3 class="dropbtn">Information</h3></a>
+                        <div id="dropdownMenu" class="dropdown-content">
+                            <a href="../information/roadmap.html">Roadmap</a>
+                        </div>
+                    </div>
+                    <a href="../project/index.html" class="hoverbtn"><h3>The Project</h3></a>
+                    <a href="../team/index.html" class="hoverbtn active"><h3>The Team</h3></a>
+                    <a href="https://socials.minoxia.org/discord" target="_blank" class="hoverbtn"><h3 class="nav-icon-h3"> <img src="../files/icons/discord-icon.png" class="nav-icon"></h3></a>
                 </div>
             </div>
+
+            <script>
+                /* When the user clicks on the button, 
+                toggle between hiding and showing the dropdown content */
+                function myFunction3() {
+                  document.getElementById("dropdownMenu").classList.toggle("show");
+                }
+                
+                // Close the dropdown if the user clicks outside of it
+                window.onclick = function(event) {
+                  if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                      var openDropdown = dropdowns[i];
+                      if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                      }
+                    }
+                  }
+                }
+            </script>
             
             <div id="navbar-mobile">
                 <div class="navbar-mobile-sitename">
@@ -35,9 +65,16 @@
                 <div id="navbar-mobile-fullscreen" class="nav-overlay">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <div class="nav-overlay-content">
-                        <a href="../index.html"><h3>Home</h3></a>
-                        <a href="../robot/index.html"><h3>De Robot</h3></a>
-                        <a href="../team/index.html"><h3 class="active">Het Team</h3></a>
+                        <a href="../index.html"><h3 class="active hoverbtn">Home</h3></a>
+                        <div class="dropdown">
+                            <a onclick="myFunction3()" class="dropbtn hoverbtn"><h3 class="dropbtn">Information</h3></a>
+                            <div id="dropdownMenu" class="dropdown-content">
+                                <a href="../information/roadmap.html">Roadmap</a>
+                            </div>
+                        </div>
+                        <a href="../project/index.html"><h3 class="hoverbtn">The Project</h3></a>
+                        <a href="../team/index.html"><h3 class="hoverbtn">The Team</h3></a>
+                        <a href="https://socials.minoxia.org/discord" target="_blank"><h3 class="nav-icon-h3 hoverbtn"> <img src="../files/icons/discord-icon.png" class="nav-icon"></h3></a>
                     </div>
                 </div>
             </div>
@@ -56,36 +93,16 @@
             </div>
 
             <div class="hero" style="font-size: large;">
-                <h1>Het Team</h1>
+                <h1>The Team</h1>
             </div>
             <div class="flex-box">
                 <div class="block">
-                    <img src="../files/images/foto-matthijs.png">
-                    <h2>Matthijs</h2>
+                    <img src="../files/images/photo-black.png">
+                    <h2>Black Sparow</h2>
                 </div>
                 <div class="block">
-                    <img src="../files/images/foto-chris.png">
-                    <h2>Chris</h2>
-                </div>
-                <div class="block">
-                    <img src="../files/images/foto-mo.png">
-                    <h2>Mohamed</h2>
-                </div>
-                <div class="block">
-                    <img src="../files/images/foto-sofie.png">
-                    <h2>Sofie</h2>
-                </div>
-                <div class="block">
-                    <img src="../files/images/foto-esmee.png">
-                    <h2>Esmee</h2>
-                </div>
-                <div class="block">
-                    <img src="../files/images/foto-finn.png">
-                    <h2>Finn</h2>
-                </div>
-                <div class="block">
-                    <img src="../files/images/foto-osama.png">
-                    <h2>osama</h2>
+                    <img src="../files/images/photo-thom.png">
+                    <h2>Thom</h2>
                 </div>
             </div>
             <div class="text-box">
